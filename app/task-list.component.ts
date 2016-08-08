@@ -40,9 +40,9 @@ export class TaskListComponent {
     this.selectedTask = clickedTask;
     this.onTaskSelect.emit(clickedTask); // 6. Use the emit method from inside the correct method to tell the vehicle (our task) to go. That emit method belongs to our onTaskSelect bridge.
   }
-  createTask(description: string): void {
+  createTask(description: string, priority: string): void {
     this.taskList.push(
-      new Task(description, this.taskList.length)
+      new Task(description, this.taskList.length, priority)
     );
   }
   onChange(filterOption) {
