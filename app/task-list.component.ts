@@ -25,7 +25,7 @@ import { DonePipe } from './done.pipe';
   </task-display>
   <edit-task-details *ngIf="selectedTask" [task]="selectedTask">
   </edit-task-details>
-  <new-task (onSubmitNewTask)="createTask($event)"></new-task>
+  <new-task (onSubmitNewTask)="createTask($event[0], $event[1])"></new-task>
   ` // 5. The timing(click); trigger the correct 'vehicles' to go across the 'bridge'; use the built-in click event emitter to trigger a method called taskClicked
 })
 export class TaskListComponent {
