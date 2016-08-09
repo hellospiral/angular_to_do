@@ -25,7 +25,7 @@ import { DonePipe } from './done.pipe';
   </task-display>
   <edit-task-details *ngIf="selectedTask" [task]="selectedTask">
   </edit-task-details>
-  <new-task (onSubmitNewTask)="createTask($event[0], $event[1])"></new-task>
+  <new-task (onSubmitNewTask)="createTask($event[0], $event[1], $event[2])"></new-task>
   ` // 5. The timing(click); trigger the correct 'vehicles' to go across the 'bridge'; use the built-in click event emitter to trigger a method called taskClicked
 })
 export class TaskListComponent {
@@ -40,9 +40,9 @@ export class TaskListComponent {
     this.selectedTask = clickedTask;
     this.onTaskSelect.emit(clickedTask); // 6. Use the emit method from inside the correct method to tell the vehicle (our task) to go. That emit method belongs to our onTaskSelect bridge.
   }
-  createTask(description: string, priority: string): void {
+  createTask(description: string, priority: string, category: string): void {
     this.taskList.push(
-      new Task(description, this.taskList.length, priority)
+      new Task(description, this.taskList.length, priority, category)
     );
   }
   onChange(filterOption) {

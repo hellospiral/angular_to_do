@@ -23,10 +23,10 @@ export class AppComponent {
   public tasks: Task[];
   constructor() {
     this.tasks = [
-      new Task("Create ToDo List app.", 0, "normal"),
-      new Task("Learn Kung Fu.", 1, "normal"),
-      new Task("Rewatch some movies.", 2, "normal"),
-      new Task("Do the laundry.", 3, "normal")
+      new Task("Create ToDo List app.", 0, "normal", "work"),
+      new Task("Learn Kung Fu.", 1, "normal", "hobby"),
+      new Task("Rewatch some movies.", 2, "normal", "home"),
+      new Task("Do the laundry.", 3, "normal", "home")
     ];
   }
   // 9. Declare the method in the parent class so that we can use the task we have passed up from the child:
